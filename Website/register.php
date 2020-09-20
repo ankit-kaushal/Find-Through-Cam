@@ -63,6 +63,50 @@
         line-height: 1.428571429;
         border-radius: 15px;
         }
+
+        .logoContainer{
+            width:140px;
+            height:151px;
+            margin: 15px auto 0 auto;
+            /*background: url(http://img1.wikia.nocookie.net/__cb20130901213905/battlebears/images/9/98/Team-icon-placeholder.png) no-repeat 0 0;*/
+            padding: 11px 10px 21px 10px;
+            text-align: center;
+            line-height: 120px;
+        }
+        .logoContainer img{
+            max-width:100%;
+        }
+        .fileContainer{
+            
+            width: 202px;
+            height: 31px;
+            overflow:hidden;
+            position:relative;
+            font-size:16px;
+            line-height: 31px;
+            color:#434343;
+            padding: 0px 41px 0 53px;
+            margin: 0 auto 60px auto;
+            cursor: pointer !important;
+        }
+        .fileContainer span{
+            overflow:hidden;
+            display:block;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+            cursor: pointer;
+        }
+        .fileContainer input[type="file"]{
+            opacity:0;
+            margin: 0;
+            padding: 0;
+            width:100%;
+            height:100%;
+            left: 0;
+            top: 0;
+            position: absolute;
+            cursor: pointer;
+        }
     </style>
     
 
@@ -120,8 +164,8 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <label class="control-label">Missing Date</label>
-                        <input type="text" name="mdate" class="form-control" placeholder="Enter missing date" />
+                        <label class="control-label">Missing Date(Write in format yyyy/mm/dd)</label>
+                        <input type="text" name="mdate" required="required" class="form-control" placeholder="Enter missing date" />
                     </div>
                     <div class="form-group">
                         <label class="control-label">Location</label>
@@ -157,6 +201,15 @@
                 <div class="panel-heading">
                      <h3 class="panel-title">Upload Photo</h3>
                 </div>
+                <div class="logoContainer">
+                    <img src="http://img1.wikia.nocookie.net/__cb20130901213905/battlebears/images/9/98/Team-icon-placeholder.png">
+                </div>
+                <div class="fileContainer sprite">
+                    <span>choose file</span>
+                    <input type="file"  value="Choose File">
+                </div>
+
+
                 <div class="panel-body">
                     
 
@@ -216,6 +269,29 @@
             $('div.setup-panel div a.btn-success').trigger('click');
             });
                 
+            $("input:file").change(function (){
+        var fileName = $(this).val();
+        if(fileName.length >0){
+    $(this).parent().children('span').html(fileName);
+        }
+        else{
+            $(this).parent().children('span').html("Choose file");
+
+        }
+    });
+    //file input preview
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+                var reader = new FileReader();            
+                reader.onload = function (e) {
+                        $('.logoContainer img').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("input:file").change(function(){
+            readURL(this);
+    });
     
     </script>
   </body>
