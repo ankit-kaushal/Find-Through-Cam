@@ -24,4 +24,4 @@ Also sometimes when we go to any place like airport, railway station or any fair
 <li>pip install tk</li>
 </ol>
 
-#### Now, you are ready to go. <a href="https://docs.google.com/presentation/d/1aVaOeUXc0F5rQ3LRM7DX1yvLEJwjzPMRsBnEvmG7j-o/edit?usp=sharing">Click Here</a> for Registration. To run the program Run " python3 FindthroughCam.py " in terminal in linux or " python FindthroughCam.py " in command prompt in windows. A window will open up click on the button and the application will start.
+#### Now, you are ready to go. <a href="https://peakperformers.000webhostapp.com/">Click Here</a> for Registration. To run the program Run " python3 FindthroughCam.py " in terminal in linux or " python FindthroughCam.py " in command prompt in windows. A window will open up click on the button and the application will start.
